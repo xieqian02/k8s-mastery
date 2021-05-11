@@ -1,4 +1,4 @@
-from textblob import TextBlob
+from snownlp import SnowNLP
 from flask import Flask, request, jsonify
 
 app = Flask(__name__)
@@ -7,7 +7,7 @@ app = Flask(__name__)
 @app.route("/analyse/sentiment", methods=['POST'])
 def analyse_sentiment():
     sentence = request.get_json()['sentence']
-    polarity = TextBlob(sentence).sentences[0].polarity
+    polarity = SnowNLP(sentence).sentiments *2 -1
     return jsonify(
         sentence=sentence,
         polarity=polarity
