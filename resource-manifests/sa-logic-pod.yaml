@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: sa-logic
+  labels:
+    app: sa-logic
+spec:
+  containers:
+    - image: xieqian02/sa-logic 
+      name: sa-logic
+      ports:
+        - containerPort: 5000

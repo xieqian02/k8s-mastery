@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: sa-webapp
+  labels:
+    app: sa-webapp
+spec:
+  containers:
+    - image: xieqian02/sa-webapp 
+      name: sa-webapp
+      env:
+        - name: SA_LOGIC_API_URL
+          value: "http://172.20.1.111:5000"
+      ports:
+        - containerPort: 8080
