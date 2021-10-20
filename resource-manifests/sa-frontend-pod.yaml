@@ -1,12 +1,12 @@
 apiVersion: v1
-kind: Pod                                            # 1
+kind: Pod
 metadata:
   name: sa-frontend
   labels:
-    app: sa-frontend                                 # 2
-spec:                                                # 3
+    app: sa-frontend
+spec:
   containers:
-    - image: rinormaloku/sentiment-analysis-frontend # 4
-      name: sa-frontend                              # 5
+    - image: xieqian02/sa-frontend
+      name: sa-frontend
       ports:
-        - containerPort: 80                          # 6
+        - containerPort: 80
