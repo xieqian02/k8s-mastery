@@ -20,7 +20,7 @@ class App extends Component {
     };
 
     analyzeSentence() {
-        fetch('http://localhost:8080/sentiment', {
+        fetch('http://'+this.urlField.getValue()+'/sentiment', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -41,12 +41,14 @@ class App extends Component {
         const polarityComponent = this.state.polarity !== undefined ?
             <Polarity sentence={this.state.sentence} polarity={this.state.polarity}/> :
             null;
+	const server = window.location.hostname+":8080";
 
         return (
             <MuiThemeProvider>
                 <div className="centerize">
                     <Paper zDepth={1} className="content">
                         <h2>Sentiment Analyser</h2>
+                        Server: &nbsp; &nbsp; <TextField ref={ref => this.urlField = ref} defaultValue={server} hintText="Input server IP:port."/>
                         <TextField ref={ref => this.textField = ref} onKeyUp={this.onEnterPress.bind(this)}
                                    hintText="Type your sentence."/>
                         <RaisedButton  label="Send" style={style} onClick={this.analyzeSentence.bind(this)}/>
