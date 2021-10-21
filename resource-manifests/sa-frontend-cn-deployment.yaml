@@ -21,7 +21,7 @@ spec:
         app: sa-frontend
     spec:
       containers:
-        - image: xieqian02/sa-frontend:cn30880
+        - image: xieqian02/sa-fe:cn
           imagePullPolicy: Always
           name: sa-frontend
           ports:

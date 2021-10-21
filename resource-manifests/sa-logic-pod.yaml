@@ -6,7 +6,7 @@ metadata:
     app: sa-logic
 spec:
   containers:
-    - image: xieqian02/sa-logic 
+    - image: xieqian02/sa-lg 
       name: sa-logic
       ports:
         - containerPort: 5000

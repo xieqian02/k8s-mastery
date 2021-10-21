@@ -6,7 +6,7 @@ metadata:
     app: sa-frontend
 spec:
   containers:
-    - image: xieqian02/sa-frontend
+    - image: xieqian02/sa-fe
       name: sa-frontend
       ports:
         - containerPort: 80

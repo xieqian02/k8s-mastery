@@ -6,7 +6,7 @@ metadata:
     app: sa-webapp
 spec:
   containers:
-    - image: xieqian02/sa-webapp 
+    - image: xieqian02/sa-wa 
       name: sa-webapp
       env:
         - name: SA_LOGIC_API_URL
